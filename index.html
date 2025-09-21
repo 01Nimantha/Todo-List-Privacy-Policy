@@ -3,149 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - To-Do List</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>Privacy Policy - To-Do List App</title>
   <style>
-    /* Reset & Body */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* --- General Body --- */
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(120deg, #0d0d0d, #050505);
-      color: #00ffff;
-      overflow-x: hidden;
-      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #f5f5f5;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-attachment: fixed;
     }
 
-    /* Background Lines Effect */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0 1px, transparent 1px 2px),
-                  repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0 1px, transparent 1px 2px);
-      z-index: -1;
-      animation: moveLines 20s linear infinite;
+    /* --- Header --- */
+    header {
+      background: rgba(0,0,0,0.75);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00ff94;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
-    @keyframes moveLines { 0% { background-position: 0 0, 0 0; } 100% { background-position: 200px 200px, 200px 200px; } }
+    header img {
+      height: 50px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    header img:hover {
+      transform: scale(1.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #00ff94;
+      letter-spacing: 1px;
+    }
 
-    /* Container */
+    /* --- Container --- */
     .container {
       max-width: 900px;
-      margin: 60px auto;
-      padding: 30px 40px;
-      background: rgba(0,0,0,0.8);
-      border: 2px solid #00ffff;
-      border-radius: 16px;
-      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff inset;
-      backdrop-filter: blur(10px);
+      margin: 40px auto;
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease-in;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #0ff, 0 0 40px #0ff;
-    }
-
+    /* --- Headings and Text --- */
     h2 {
-      font-size: 1.8rem;
-      margin-top: 25px;
-      margin-bottom: 12px;
-      color: #0ff;
-      text-shadow: 0 0 5px #0ff;
+      color: #00ff94;
+      border-left: 5px solid #00ff94;
+      padding-left: 10px;
+      margin-top: 30px;
     }
-
-    p, li {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 10px;
-      color: #00ffff;
+    p {
+      margin: 10px 0;
     }
-
-    ul { margin-left: 20px; }
 
     a {
-      color: #ff00ff;
+      color: #00ff94;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
     }
-    a:hover { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    /* Footer */
+    /* --- Footer --- */
     footer {
       text-align: center;
-      margin-top: 50px;
-      padding-bottom: 20px;
-      font-size: 0.9rem;
-      color: #888;
+      padding: 30px 15px 15px 15px;
+      background: rgba(0,0,0,0.75);
+      border-top: 2px solid #00ff94;
+      color: #ccc;
+      position: relative;
+    }
+    footer img {
+      height: 70px;
+      margin-top: 15px;
+      transition: transform 0.3s;
+    }
+    footer img:hover {
+      transform: scale(1.1);
     }
 
-    /* Neon Glowing Effect */
-    .glow {
-      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .container { padding: 20px; }
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.4rem; }
-      p, li { font-size: 0.95rem; }
+    /* --- Animations --- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+  <!-- --- Header --- -->
+  <header>
+    <img src="https://raw.githubusercontent.com/01Ruwantha/calculator-privacy-policy/2db1f5841ee3f957ebe13168a157b597b39d837b/pic_01.jpg" 
+         alt="App Logo">
+    <h1>Privacy Policy - To-Do List App</h1>
+  </header>
+
+  <!-- --- Main Content --- -->
   <div class="container">
-    <h1 class="glow">Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> September 21, 2025</p>
 
-    <p>Effective Date: <span class="glow">September 21, 2025</span></p>
+    <p><strong>P.V Nimantha Madhushan</strong> built the <strong>To-Do List App</strong> as a free/personal use application. This Privacy Policy explains how we handle your information when you use our app.</p>
 
-    <p>Your privacy is important to us. This Privacy Policy explains how the <strong>To-Do List</strong> app ("we", "our", or "app") collects, uses, and protects your information.</p>
+    <h2>1. Information We Collect</h2>
+    <p>- The app does not collect personal information such as your name, email, or location.</p>
+    <p>- Only your tasks and their completion status are stored locally on your device using <em>Hive</em>. This data never leaves your device.</p>
 
-    <h2 class="glow">1. Information We Collect</h2>
-    <p>The app does not collect personal information such as your name, email, or location. We only store the tasks you create:</p>
-    <ul>
-      <li>Task title</li>
-      <li>Task completion status</li>
-      <li>Date and time when a task is completed</li>
-    </ul>
-    <p>All data is stored locally on your device using Hive.</p>
+    <h2>2. How We Use Information</h2>
+    <p>- Your tasks and completed history are stored only on your device for convenience.</p>
+    <p>- You can delete tasks or clear completed tasks at any time within the app.</p>
 
-    <h2 class="glow">2. How We Use Your Information</h2>
-    <ul>
-      <li>Display your tasks in the app</li>
-      <li>Track completed tasks</li>
-      <li>Manage your task history</li>
-    </ul>
-    <p>Your data is not shared, sold, or transmitted to third parties.</p>
+    <h2>3. Data Sharing</h2>
+    <p>- We do <strong>not share, sell, or transmit</strong> any data to third parties.</p>
 
-    <h2 class="glow">3. Third-Party Services</h2>
-    <ul>
-      <li><strong>Hive & Hive Flutter:</strong> Local data storage</li>
-      <li><strong>Provider:</strong> State management</li>
-      <li><strong>Intl:</strong> Formatting dates</li>
-    </ul>
+    <h2>4. Security</h2>
+    <p>- Your data is stored locally, so there is minimal risk of unauthorized access.</p>
+    <p>- It is recommended to secure your device with a password or PIN for extra safety.</p>
 
-    <h2 class="glow">4. Data Security</h2>
-    <p>We take reasonable measures to protect your data stored on your device. However, data may be lost if the app is uninstalled or your device is reset.</p>
+    <h2>5. Children’s Privacy</h2>
+    <p>- The app does not knowingly collect or process data from children under 13. Since no personal data is collected, it is safe for all ages.</p>
 
-    <h2 class="glow">5. Children’s Privacy</h2>
-    <p>The app is not intended for children under 13 years old. We do not knowingly collect information from children.</p>
+    <h2>6. Changes to This Privacy Policy</h2>
+    <p>- Updates to this Privacy Policy will be posted within the app or on the app store listing.</p>
 
-    <h2 class="glow">6. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. The latest version will always be available within the app or on our website.</p>
-
-    <h2 class="glow">7. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-    <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    <p>App Name: To-Do List</p>
+    <h2>7. Contact Us</h2>
+    <p>If you have questions or concerns, please contact us at:</p>
+    <p>📧 <a href="mailto:01nimantha@gmail.com">01nimantha@gmail.com</a></p>
   </div>
 
+  <!-- --- Footer --- -->
   <footer>
-    &copy; 2025 To-Do List. All rights reserved.
+    &copy; 2025 P.V Nimantha Madhushan | To-Do List App Privacy Policy
+    <br>
+    <img src="https://raw.githubusercontent.com/01Ruwantha/calculator-privacy-policy/d8cfef386ee8f35d2b8822e2389cd6ef4a238635/ma.png" 
+         alt="Company Logo">
   </footer>
 </body>
 </html>
