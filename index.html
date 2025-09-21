@@ -4,58 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - To-Do List</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset & Body */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(120deg, #0d0d0d, #050505);
+      color: #00ffff;
+      overflow-x: hidden;
+      min-height: 100vh;
     }
+
+    /* Background Lines Effect */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0 1px, transparent 1px 2px),
+                  repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0 1px, transparent 1px 2px);
+      z-index: -1;
+      animation: moveLines 20s linear infinite;
+    }
+    @keyframes moveLines { 0% { background-position: 0 0, 0 0; } 100% { background-position: 200px 200px, 200px 200px; } }
+
+    /* Container */
     .container {
       max-width: 900px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin: 60px auto;
+      padding: 30px 40px;
+      background: rgba(0,0,0,0.8);
+      border: 2px solid #00ffff;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff inset;
+      backdrop-filter: blur(10px);
     }
-    h1, h2 {
-      color: #4B0082;
-    }
+
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #0ff, 0 0 40px #0ff;
     }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    p, li {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 10px;
+      color: #00ffff;
+    }
+
+    ul { margin-left: 20px; }
+
     a {
-      color: #4B0082;
+      color: #ff00ff;
       text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      margin-left: 20px;
-    }
+    a:hover { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+
+    /* Footer */
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
+      padding-bottom: 20px;
       font-size: 0.9rem;
-      color: #666;
+      color: #888;
+    }
+
+    /* Neon Glowing Effect */
+    .glow {
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container { padding: 20px; }
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.4rem; }
+      p, li { font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Privacy Policy</h1>
+    <h1 class="glow">Privacy Policy</h1>
 
-    <p>Effective Date: September 21, 2025</p>
+    <p>Effective Date: <span class="glow">September 21, 2025</span></p>
 
     <p>Your privacy is important to us. This Privacy Policy explains how the <strong>To-Do List</strong> app ("we", "our", or "app") collects, uses, and protects your information.</p>
 
-    <h2>1. Information We Collect</h2>
+    <h2 class="glow">1. Information We Collect</h2>
     <p>The app does not collect personal information such as your name, email, or location. We only store the tasks you create:</p>
     <ul>
       <li>Task title</li>
@@ -64,8 +114,7 @@
     </ul>
     <p>All data is stored locally on your device using Hive.</p>
 
-    <h2>2. How We Use Your Information</h2>
-    <p>We use your task information solely to:</p>
+    <h2 class="glow">2. How We Use Your Information</h2>
     <ul>
       <li>Display your tasks in the app</li>
       <li>Track completed tasks</li>
@@ -73,25 +122,23 @@
     </ul>
     <p>Your data is not shared, sold, or transmitted to third parties.</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>The app uses the following libraries:</p>
+    <h2 class="glow">3. Third-Party Services</h2>
     <ul>
       <li><strong>Hive & Hive Flutter:</strong> Local data storage</li>
       <li><strong>Provider:</strong> State management</li>
       <li><strong>Intl:</strong> Formatting dates</li>
     </ul>
-    <p>These libraries do not collect personal data.</p>
 
-    <h2>4. Data Security</h2>
+    <h2 class="glow">4. Data Security</h2>
     <p>We take reasonable measures to protect your data stored on your device. However, data may be lost if the app is uninstalled or your device is reset.</p>
 
-    <h2>5. Children’s Privacy</h2>
+    <h2 class="glow">5. Children’s Privacy</h2>
     <p>The app is not intended for children under 13 years old. We do not knowingly collect information from children.</p>
 
-    <h2>6. Changes to This Privacy Policy</h2>
+    <h2 class="glow">6. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time. The latest version will always be available within the app or on our website.</p>
 
-    <h2>7. Contact Us</h2>
+    <h2 class="glow">7. Contact Us</h2>
     <p>If you have any questions about this Privacy Policy, please contact us at:</p>
     <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
     <p>App Name: To-Do List</p>
